@@ -1,0 +1,35 @@
+{
+	"name": "Cylindair",
+	"version": "0.5.0",
+	"description": "Comprehensive air quality monitor for Fabrica-IO",
+	"keywords": "Fabrica-IO, sensor, air, AQI, VOC, pm2.5",
+	"repository":
+	{
+	  "type": "git",
+	  "url": "https://github.com/ShVerni/Cylindair.git"
+	},
+	"authors":
+	[
+	  {
+		"name": "Sam Groveman",
+		"email": "SamGroveman@outlook.com",
+		"url": "https://github.com/FabricaIO"
+	  }
+	],
+	"dependencies": {
+		"ParameterGetter": "https://github.com/FabricaIO/util-ParameterGetter.git"
+	},
+	"license": "GPLv3",
+	"homepage": "https://github.com/FabricaIO",
+	"frameworks": "arduino",
+	"platforms": "*",
+	"fabricaio" : {
+		"name": "Cylindair Monitor",
+		"type": 0,
+		"category": "Environment Sensor",
+		"libname": "Cylindair",
+		"includes": ["Cylindair"],
+		"description": "Comprehensive air quality monitor for Fabrica-IO",
+		"constructor":[[]]
+	}
+  }
