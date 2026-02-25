@@ -24,7 +24,7 @@ Cylindair is a modular device that can show and record the estimated overall [ai
 
 ## What is Cylindair?
 Monitoring the air quality in an environment is very important to the overall health of those living there. Being more aware of the air quality you're living in can help you make informed decisions about your home and implement solutions, such as installing air filters or improving ventilation, before they cause health problems. Having granular, local data in homes and communities, either individually or part of a citizen science campaign, can also help identify areas that are experiencing poor air quality that have been neglected due to historical or social biases, or a lack of resources. As stated in this [NASA article](https://terra.nasa.gov/citizen-science/air-quality):
-te
+
 > Air pollution levels for your region are recorded at state monitoring stations, but air pollution does not necessarily spread itself evenly throughout the region. You may live next to a busy highway or some other source of pollution, or the topography of the land or city may concentrate pockets of polluted air near you. To know exactly what is in the air you are breathing, you need to monitor the air where you are.
 
 ### Features
@@ -134,14 +134,14 @@ However, the very first time you use the device, the TVOC requires an hour to bu
 ### LED Indicator
 During normal operation the LED indicator will light up with a color according to how clean the air is, and will update every two seconds. Those colors are:
 
-| Color   |                                                                               |  Air Quality                   |
-| ------- | ----------------------------------------------------------------------------- | -------------------------------|
-| Blue    | <div style="background-color:rgb(0, 0, 255);width:20px;height:20px;"></div> | Excellent                      |
-| Green   | <div style="background-color:rgb(0,200,0);width:20px;height:20px;"></div>   | Good                           |
-| Yellow  | <div style="background-color:rgb(152,255,7);width:20px;height:20px;"></div> | Unhealthy for sensitive groups |
-| Orange  | <div style="background-color:rgb(248,157,0);width:20px;height:20px;"></div> | Unhealthy                      |
-| Red     | <div style="background-color:rgb(255,0,0);width:20px;height:20px;"></div>   | Very unhealthy                 |
-| Magenta | <div style="background-color:rgb(255,0,242);width:20px;height:20px;"></div> | Hazardous                      |
+| Color   |                                                                      |  Air Quality                   |
+| ------- | -------------------------------------------------------------------- | -------------------------------|
+| Blue    | $${\color{Cerulean}\Huge&#9632;}$$  | Excellent                      |
+| Green   | $${\color{Green}\Huge&#9632;}$$     | Good                           |
+| Yellow  | $${\color{Goldenrod}\Huge&#9632;}$$ | Unhealthy for sensitive groups |
+| Orange  | $${\color{Orange}\Huge&#9632;}$$    | Unhealthy                      |
+| Red     | $${\color{Red}\Huge&#9632;}$$       | Very unhealthy                 |
+| Magenta | $${\color{Magenta}\Huge&#9632;}$$   | Hazardous                      |
 
 ### Web Interface
 After setting up your Cylindair, it's generally not necessary to access the web interface unless you want to change settings or access more detailed data. The web interface should be accessible at the address `http://airsensor.local`, but if not, you can connect the Cylindair to your computer again and use the [serial monitor](https://github.com/FabricaIO/FabricaIO-App/wiki/App-Usage#flash-firmware-menu) in the Fabrica-IO app to see the IP address.
@@ -162,7 +162,7 @@ You can record air quality data to the device by adding the [LocalDataLogger](ht
 
 You can also add the [Data-Visualizer](https://github.com/FabricaIO/Data-Visualizer) module to render basic graphs in the device web interface automatically.
 
-![Data Visualizer](media/Graphs.PNG "[Data Visualizer")
+![Data Visualizer](media/Graphs.png "Data Visualizer")
 
 In the default configuration, if a data point is recorded every minute, the device can hold approximately a week's worth of data at a time.
 
