@@ -158,7 +158,7 @@ If you don't want to have your Cylindair connected to WIFi after settings it up,
 ### Local Data and Graphs
 You can record air quality data to the device by adding the [LocalDataLogger](https://github.com/FabricaIO/actor-LocalDataLogger) to the project. After data is collected, you can download it from the "Storage Manager" section in the [web interface](#web-interface) for processing. For example, charts like this can be produced:
 
-![Air Quality Chart](media/StackedGraph.PNG "Air Quality Chart")
+![Air Quality Chart](media/StackedGraph.png "Air Quality Chart")
 
 You can also add the [Data-Visualizer](https://github.com/FabricaIO/Data-Visualizer) module to render basic graphs in the device web interface automatically.
 
