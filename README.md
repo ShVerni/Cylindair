@@ -166,7 +166,7 @@ You can also add the [Data-Visualizer](https://github.com/FabricaIO/Data-Visuali
 
 In the default configuration, if a data point is recorded every minute, the device can hold approximately a week's worth of data at a time.
 
-There's also an example web interface in the [fabrica-io folder](fabrica-io/) for use with the data visualizer. This interface is simplified to allow for retrieving and resetting the data collected on the device. To use, go to the "Storage Manager" in the web interface. Download `index.html` and rename it to `index2.html`, the upload it to "WWW". Next, upload the new [index.html](fabrica-io/index.html) and [cylindair-script.js](fabrica-io/cylindair-script.js) files to "WWW". Return to the home menu and refresh the page if needed.
+There's also an example web interface in the [fabrica-io folder](fabrica-io/) for use with the data visualizer. This interface is simplified to allow for retrieving and resetting the data collected on the device. To use, go to the "Storage Manager" in the web interface. Download `index.html` and rename it to `index2.html`, then upload it to "WWW". Next, upload the new [index.html](fabrica-io/index.html) and [cylindair-script.js](fabrica-io/cylindair-script.js) files to "WWW". Return to the home menu and refresh the page if needed.
 
 ### No Extra LED
 While the Cylindair uses an external RGB LED to clearly indicate the air quality, the Firebeetle has one built-in that can be used instead. The limitation is that it will not be as visible when using the case.
