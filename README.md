@@ -3,7 +3,7 @@ Cylindair is a modular device that can show and record the estimated overall [ai
 
 ![Cylindair Device](media/Cylindair.jpg "Cylindair Device")
 ## Contents:
-* [What is Cylindair](#what-is-cylindair)
+* [What is Cylindair?](#what-is-cylindair)
 	* [Features](#features)
 	* [Parameter Selection](#parameter-selection)
 		* [PM2.5](#pm25)
@@ -23,34 +23,37 @@ Cylindair is a modular device that can show and record the estimated overall [ai
 	* [No Extra LED](#no-extra-led)
 
 ## What is Cylindair?
-Monitoring the air quality in an environment is very important to the overall health of those living there. Being more aware of the air quality you're living in can help you make informed decisions about your home and implement solutions, such as installing air filters or improving ventilation, before they cause health problems. Having granular, local data in homes and communities, either individually or part of a citizen science campaign, can also help identify areas that are experiencing poor air quality and have been neglected due to historical or social biases, or a lack of resources. As stated in this [NASA article](https://terra.nasa.gov/citizen-science/air-quality):
+Monitoring the air quality in an environment is very important to the overall health of those living there. Being more aware of environment you're living in can help you make informed decisions about your home and implement solutions, such as installing air filters or improving ventilation, before they cause health problems. Having granular, local data in homes and communities, either individually or part of a citizen science campaign, can also help identify areas that are experiencing poor air quality and have been neglected due to historical or social biases or a lack of resources. As stated in this [NASA article](https://terra.nasa.gov/citizen-science/air-quality):
 
 > Air pollution levels for your region are recorded at state monitoring stations, but air pollution does not necessarily spread itself evenly throughout the region. You may live next to a busy highway or some other source of pollution, or the topography of the land or city may concentrate pockets of polluted air near you. To know exactly what is in the air you are breathing, you need to monitor the air where you are.
 
 ### Features
-Cylindair is a device intended to make air quality monitoring easy, accessible, and affordable for everyone, and provide the flexibility to adapt to individual needs and budgets. It can also be potentially linked up to data-sharing services to create a crowd-sourced dataset. Some key features include:
+Cylindair is a device intended to make basic air quality monitoring easy, accessible, and affordable for everyone, and provide the flexibility to adapt to individual needs and budgets. It can also be potentially linked up to data-sharing services to create crowd-sourced datasets. Some key features include:
 
-* Connectivity: Can connect to WiFi network for retrieving detailed data, or sharing data with others. Can also broadcast its own WiFi network in areas without internet access.
+* Connectivity: Can connect to WiFi networks for retrieving detailed data, or sharing data with others. Can also broadcast its own WiFi network in areas without internet access.
 * Flexible: Can be used as a basic air quality monitor for instant feedback, or setup to record and share detailed air quality data. 
-* Inexpensive: The Cylindair can be assembled for in the most basic form for ~$50.
+* Inexpensive: The Cylindair can be assembled in the most basic form for ~$50.
 * Modular: Can be equipped with any combination of three default sensors, or customized with all the devices, sensors, and features available in the [Fabrica-IO project](https://github.com/FabricaIO).
 
 ### Parameter Selection
-Deciding which air quality parameters to prioritize is difficult as the most relevant air contaminants for health can vary based on the location and the individual. These parameters were chosen for their broad applicability, sensor module cost and availability, and ease of use.  Fortunately, the Cylindair is designed to be modular and customizable, so if there are other sensor module that aren't available on the [Fabrica-IO](https://github.com/orgs/FabricaIO/repositories?q=sensor) platform, please reach out and we can try and add them, or you can [add them yourself](https://github.com/FabricaIO/FabricaIO-esp32hub/wiki/Adding-a-New-Device).
+Deciding which air quality parameters to prioritize is difficult as the most relevant air contaminants for health can vary based on the location and the individual. These parameters were chosen for their broad applicability, sensor module cost and availability, and ease of use.  Fortunately, the Cylindair is designed to be modular and customizable, so if there are other sensor modules that aren't available on the [Fabrica-IO](https://github.com/orgs/FabricaIO/repositories?q=sensor) platform, please reach out and we can try and add them, or you can [add them yourself](https://github.com/FabricaIO/FabricaIO-esp32hub/wiki/Adding-a-New-Device) as a fun project to share with others.
 
 #### PM2.5
-PM2.5 refers to particulates in the air that are 2.5μm in diameter or less. Particle pollution is one of the [most common](https://terra.nasa.gov/citizen-science/air-quality) pollutants and [one of the most hazardous](https://pmc.ncbi.nlm.nih.gov/articles/PMC9223652/). Fortunately, PM2.5 modules are common, inexpensive, and reliable. PM2.5 measurements should be included in pretty much all air quality monitors.
+PM2.5 refers to particulates in the air that are 2.5μm in diameter or less. Particle pollution is one of the [most common](https://terra.nasa.gov/citizen-science/air-quality) pollutants and [one of the most hazardous](https://pmc.ncbi.nlm.nih.gov/articles/PMC9223652/). Fortunately, PM2.5 modules are common, inexpensive, and reliable. PM2.5 measurements should be included in pretty much all general-purpose air quality monitors.
 
 #### TVOC/eCO2
-TVOC refers to the total [volatile organic compounds](https://en.wikipedia.org/wiki/Volatile_organic_compound) in the air, and can be used to calculate an estimated carbon dioxide concentration, but that value is very rough. Common sources of VOCs in the home can include cleaning products, solvents, upholstery, and cooking. The hazards of VOCs vary greatly depending on which compounds are in the air, and TVOC measurements look only at the total amount of VOCs present, not which ones are there. Thus, it's impossible to draw firm safety conclusions from TVOC measurements. Still, TVOC measurements can help provide estimates of the air quality and highlight if there is a spike in VOCs in the air which can be concerning. This can be especially useful as the above PM2.5 measurements can miss non-particulate containments that TVOC devices can measure, so PM2.5 and TVOC can be combined to calculate an overall AQI.
+TVOC refers to the total [volatile organic compounds](https://en.wikipedia.org/wiki/Volatile_organic_compound) in the air, and can be used to calculate an estimated carbon dioxide concentration, but that value is very rough. Common sources of VOCs in the home can include cleaning products, solvents, upholstery, and cooking. The hazards of VOCs vary greatly depending on which compounds are in the air, and TVOC measurements look only at the total amount of VOCs present, not which ones are there. Thus, it's impossible to draw firm safety conclusions from TVOC measurements. Still, higher concentrations are never good, and TVOC measurements can help provide estimates of the air quality and highlight if there is a spike in VOCs in the air which can be concerning. This can be especially useful as the above PM2.5 measurements can miss non-particulate containments that TVOC devices can measure, so PM2.5 and TVOC can be combined to calculate an overall AQI.
 
 #### Other Gases
-A MEMS gas sensor can help measure the concentrations of various gasses in the air, depending on the module. While theses devices have [some](#calibration) [limitations](#specificity), they can help give clues to narrow down which gas pollutants are present where the TVOC measurement above can't give any specifics. The primary advantage of MEMS gas modules are their relative affordability and longevity compared to factory calibrated electrochemical gas sensors. This measurement is not used in AQI calculations since it doesn't really provide significantly different or better data than the TVOC measurement above. This measurement is best for those with a real interest in gathering and analyzing as much data as possible.
+A MEMS gas sensor can help measure the concentrations of various gasses in the air, depending on the module. While theses devices have [some](#calibration) [limitations](#specificity), they can help give clues to narrow down which gas pollutants are present where the TVOC measurement above can't give any specifics. The primary advantage of MEMS gas modules are their relative affordability and longevity compared to factory calibrated electrochemical gas sensors. This measurement is not used in AQI calculations since it doesn't really provide significantly different or better generalized air quality data than the TVOC measurement above. This measurement is best for those with a real interest in gathering and analyzing as much data as possible, or those trying to identify specific pollutants.
 
 ## Limitations
-While the Cylindair is an excellent module that can help us become more informed about our environment, there are some limitations and caveats to be aware of. Nearly all these limitations could be mitigated by using more expensive sensor modules or more sophisticated data analysis tools, but that would make the Cylindair less accessible. Thus, this base version device consists of recommendations that try to balance these limitations with accessability, though a more sophisticated version could easily be built.
+While the Cylindair is an excellent tool that can help us become more informed about our environment, there are some limitations and caveats to be aware of. Nearly all these limitations could be mitigated by using more expensive sensor modules or more sophisticated data analysis tools, but that would make the Cylindair less universally accessible and affordable. Thus, this base version device consists of recommendations that try to balance these limitations with accessability, though a more sophisticated version could easily be built.
 
-None of these limitations invalidate the usefulness of this device, but the data and information it collects should be understood in the proper context to help you decide if it can fit your needs. Starting with a Cylindair to see if there are any obvious problems is an easy and inexpensive way to see if more sophisticated testing is called for.
+> [!WARNING]
+> While the Cylindair can help alert you to problems with your environment, like all devices it is not perfect and may have bugs or failure modes that are unknown, and so could misrepresent the air quality in either direction. As with anything, it's important not to rely on a single source of information without understanding the risks.
+
+None of these limitations invalidate the usefulness of this device, but the data and information it can collect should be understood in the proper context to help you decide if it can fit your needs. Starting with a Cylindair to see if there are any obvious problems is an easy and inexpensive way to see if more sophisticated testing is called for.
 
 So given all that, here are some important things to keep in mind:
 
@@ -58,10 +61,10 @@ So given all that, here are some important things to keep in mind:
 This device is designed primarily for indoor use due the the case not being weatherproof. However, if printed in a suitable material (PETG, ABS, etc.), and placed in a fairly sheltered spot, careful outdoor use should be possible.
 
 ### Calibration
-The sensor modules recommended for this device are not factory calibrated. These were cost saving choices. This means the readings can't be taken as exact values. It's better to think of these measurements as good estimations for informing people about their environment and tracking changes to the air quality.
+The sensor modules recommended for this device are not factory calibrated. These were cost saving choices. This means the readings can't be taken as exact values. It's better to think of these measurements as good estimations for informing people about their environment and tracking changes to the air quality over time.
 
 ### Baseline
-If using the TVOC or MEMS gas sensor, they expect to be in a clean environment for the first few minutes after the device is powered on to establish a baseline. Measurements are generally presented relative to this baseline, so if the air quality is poor during this calibration phase, it could be mistakenly reported as clean air. Turning the device off and back on again when the air is clean will reset this baseline. The PM2.5 sensor is not affected by this and has no such limitation.
+If using the TVOC or MEMS gas sensor, they expect to be in a clean environment for the first few minutes after the device is powered on to establish a baseline. Measurements are generally presented relative to this baseline, so if the air quality is poor during this baseline calibration phase, it could be mistakenly reported as clean air. Turning the device off and back on again when the air is clean will reset this baseline. The PM2.5 sensor is not affected by this and has no such limitation.
 
 ### Specificity
 The MEMS gas sensor used does not have high specificity, so a gas that it does not measure could trigger a false positive for one or more gasses it does measure, especially in high concentrations. For example, the device could report ethanol being present when in fact the air has isopropanol, not ethanol. These measurements are best used as a guide or warning to further investigate possible areas of concern.
@@ -84,19 +87,21 @@ Links to example places to purchase the items are provided, but any similar item
 11. [Jumper Wires F/F](https://www.amazon.com/California-JOS-Breadboard-Optional-Multicolored/dp/B0BRTKTV64), required to hook up the TVOC sensor, and can be soldered to the RGB LED for an easier hookup.
 
 ## Assembly
-This guide will cover assembly of device with all the optional accessories, skip any parts for devices or addons not being used.
+This guide will cover assembly of the device with all the optional accessories, skip any parts for devices or addons not being used.
 
 The first step is to print the case, if using. From the [case](case/) folder, print one base, one lid, and four feet. It's recommended to use TPU or similar to print the feet and a white material for the lid so the LED colors show well. Once printed, use a soldering iron to embed the appropriate heat set inserts into the posts on the lid and base.
 
 The original model of the case can be found on OnShape [here](https://cad.onshape.com/documents/e1bc6eef3c296f13328b4ea3/w/8819127dd3330596ef8d2a02/e/4943a45a48580da0d1e130dd?renderMode=0&uiState=699e70728d53160defecc00d), and can be modified as needed for other sensor modules or configurations.
 
-Once the case is done, use the M2 screws to attach the Firebeetle, without its shield, to the underside of the case lid (see the image below).
+Once the case is done, use the M2 screws to attach the Firebeetle, without its shield, to the underside of the case lid (see the image further below).
 
-Next, if using the TVOC sensor or RGB LED, solder on the pins for the TVOC. For the RGB LED, cut three of the jumper wires in half, strip them and solder them to the `5V`, `gnd`, and `Din` pads on the LED, leaving the female connectors on the other end.
+Next, if using the TVOC sensor or RGB LED, solder on the pins for the TVOC. For the RGB LED, cut three of the jumper wires in half, strip them and solder them to the `5V`, `gnd`, and `Din` pads on the LED, leaving the female DuPont connectors on the other end.
 
 Using the jumpers or connectors included with the sensor module, connect all the sensor modules to the I2C pins on the Firebeetle shield using the below hookup guide (the PM2.5 and MEMS gas module linked in this guide also have color-coded wires to match the Firebeetle shield):
 
 ```
+Sensor ---> Firebeetle Shield
+-----------------------------
 VCC or 3V3 ---> +
 GND ----------> -
 SCL ----------> C
@@ -105,6 +110,8 @@ SDA ----------> D
 Next, connect the RGB LED to the Firebeetle shield using the below hookup guide:
 
 ```
+LED ---> Firebeetle Shield
+-----------------------------
 5V  ---> +
 gnd ---> -
 Din ---> Digital pin 6
@@ -114,7 +121,7 @@ Next, screw each sensor module into the case base with the sensors themselves fa
 
 ![Cylindair Assembly](media/Assembly.jpg "Cylindair Assembly")
 
-Fit the base into the lid, there is a notch to help with alignment. Put M3 screws through the feet, and use that to screw the feet to the base, which also screws the base into the lid. Finally, connect to USB power using the hole in the lid, and you're done!
+Fit the base into the lid, there is a notch to help with alignment. Put M3 screws through the feet, and use those to screw the feet to the base, which also screws the base into the lid. Finally, connect to USB power using the hole in the lid, and you're done!
 
 ## Setup
 
@@ -122,14 +129,15 @@ This will cover the software setup and configuration of the Cylindair. This most
 
 First, download and install the [Fabrica-IO app](https://github.com/FabricaIO/FabricaIO-App/wiki/App-Usage). Set up a new project directory. Next, download the [Cyindair project](fabrica-io/Cylindair-Project.json) from this repository. Load it in the app, then connect the Firebeetle to the computer via USB. [Build](https://github.com/FabricaIO/FabricaIO-App/wiki/App-Usage#usage) the program, then [flash](https://github.com/FabricaIO/FabricaIO-App/wiki/App-Usage#flash-firmware-menu) the firmware following those linked guides.
 
-Next, follow the instructions to [connect to WiFi](https://github.com/FabricaIO/FabricaIO-esp32hub/wiki/WiFi-and-Web-Interface#connecting-to-wifi) and then upload the [default web interface](https://github.com/FabricaIO/FabricaIO-esp32hub/wiki/WiFi-and-Web-Interface#connecting-to-the-web-interface). Once that's done, download the [Cylindair configuration](fabrica-io/Cyindair-Config.json) from this repository, and then from the "Storage Manager" on the device's web interface, restore it as a backup. Reboot the device from the home menu. After that, your setup should be complete. See the next section for important notes on the usage and first time setup of the Cylindair.
+Next, follow the instructions to [connect to WiFi](https://github.com/FabricaIO/FabricaIO-esp32hub/wiki/WiFi-and-Web-Interface#connecting-to-wifi) and then upload the [default web interface](https://github.com/FabricaIO/FabricaIO-esp32hub/wiki/WiFi-and-Web-Interface#connecting-to-the-web-interface). Once that's done, download the [Cylindair configuration](fabrica-io/Cyindair-Config.json) from this repository, and then from the "Storage Manager" on the device's web interface, restore it as a backup. Reboot the device from the home menu. After that, your setup should be complete. See the next section for important notes on the usage and first time use of the Cylindair.
 
 ## Usage
 
 ### Power On
-If you are using the TVOC or MEMS gas sensor modules, they require a warmup/calibration period after powering-on before they can be used. You'll see a red light inside the Cylindair during this warmup/calibration period. In normal operation, it takes ~3 minutes for the sensors to be ready, and once that's done you'll start seeing the LED indicator light up according to the [table below](#led-indicator) as measurements are taken.
+If you are using the TVOC or MEMS gas sensor modules, they require a warmup/calibration period after powering-on before they can be used. You'll see a red light inside the Cylindair during this warmup/calibration period. In normal operation, it takes ~3 minutes for the sensors to be ready, and once that's done you'll start seeing the LED indicator light-up according to the [table below](#led-indicator) as measurements are taken.
 
-However, the very first time you use the device, the TVOC requires an hour to burn-in before you'll start seeing measurements or the LED light up. After that, it must be left on for at least 24-hours or it will need to repeat that hour burn-in period. After that, it should operate normally with the 3 minute warmup.
+> [!IMPORTANT]
+> The very first time you use the device, the TVOC requires an hour to burn-in before you'll start seeing measurements or the LED light-up. After that, it must be left on for __*at least*__ 24-hours or it will need to repeat that hour burn-in period/24-hour power on cycle. After that, it should operate normally with the 3 minute warmup.
 
 ### LED Indicator
 During normal operation the LED indicator will light up with a color according to how clean the air is, and will update every two seconds. Those colors are:
@@ -150,7 +158,7 @@ After setting up your Cylindair, it's generally not necessary to access the web 
 > If you are not using the TVOC module you'll need to go into the web interface and change the "Cylindair Monitor" settings in the "Device Manager", setting the "TVOC_AQI" option to "None".
 
 ## Suggested Mods
-While the Cyindair will work as a useful and informative tool as is, it can be expanded with other functionality or modified to work in different ways. While there are numerous ways to add sensors ro other functionality to the device, this is a collection a few common and useful tweaks or mods.
+While the Cyindair will work as a useful and informative tool as is, it can be expanded with other functionality or modified to work in different ways. While there are numerous ways to add sensors or other functionality to the device, this is a collection a few useful tweaks or mods.
 
 ### No WiFi
 If you don't want to have your Cylindair connected to WIFi after settings it up, go into the [web interface](#web-interface) and under the "Hub Configuration" menu, uncheck the [WiFiClient](https://github.com/FabricaIO/FabricaIO-esp32hub/wiki/Hub-Configuration#wificlient) option, save, and then reboot the device from the home menu. Now the device will work by broadcasting it's own WiFi network and won't need connect to another one.
@@ -166,9 +174,9 @@ You can also add the [Data-Visualizer](https://github.com/FabricaIO/Data-Visuali
 
 In the default configuration, if a data point is recorded every minute, the device can hold approximately a week's worth of data at a time.
 
-There's also an example web interface in the [fabrica-io folder](fabrica-io/) for use with the data visualizer. This interface is simplified to allow for retrieving and resetting the data collected on the device. To use, go to the "Storage Manager" in the web interface. Download `index.html` and rename it to `index2.html`, then upload it to "WWW". Next, upload the new [index.html](fabrica-io/index.html) and [cylindair-script.js](fabrica-io/cylindair-script.js) files to "WWW". Return to the home menu and refresh the page if needed.
+There's also an example web interface in the [fabrica-io folder](fabrica-io/) of this repository for use with the data visualizer. This interface is simplified to allow for retrieving and resetting the data collected on the device. To use, go to the "Storage Manager" in the web interface. Download `index.html` and rename it to `index2.html`, then upload it to "WWW". Next, upload the new [index.html](fabrica-io/index.html) and [cylindair-script.js](fabrica-io/cylindair-script.js) files to "WWW". Return to the home menu and refresh the page if needed.
 
 ### No Extra LED
-While the Cylindair uses an external RGB LED to clearly indicate the air quality, the Firebeetle has one built-in that can be used instead. The limitation is that it will not be as visible when using the case.
+While the Cylindair uses an external RGB LED to clearly indicate the air quality, the Firebeetle has one built-in that can be used instead. The limitation is that it will not be as visible when using the 3D printed case.
 
 To enable using the built-in LED to indicate the air quality, log into the [web interface](#web-interface) and under the "Device Manager" section select the "Indicator" device. Change the "Pin" option from "14" to "5" and update the configuration. Now the built-in LED should show the overall air quality as described [above](#led-indicator).
