@@ -57,6 +57,9 @@ None of these limitations invalidate the usefulness of this device, but the data
 
 So given all that, here are some important things to keep in mind:
 
+### Averaging
+There are [many standards](https://en.wikipedia.org/wiki/Air_quality_index#AQI_mechanics) for calculating AQI, and most use an average measured over 1 to 24 hours. The Cyindair does not do this, rather it provides a snapshot of the air quality at any given moment. What this means is that you shouldn't panic if the air quality momentarily registers as terrible, say while cooking. If the air quality returns to a healthy state reasonably quickly, maybe over a hour or two, then everything is probably fine. However, if the air quality remains consistently poor, or is frequently or regularly becoming poor, that could be cause for concern.
+
 ### Outdoor Use
 This device is designed primarily for indoor use due the the case not being weatherproof. However, if printed in a suitable material (PETG, ABS, etc.), and placed in a fairly sheltered spot, careful outdoor use should be possible.
 
