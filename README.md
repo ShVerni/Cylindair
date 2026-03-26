@@ -86,7 +86,7 @@ Links to example places to purchase the items are provided, but any similar item
 7. [M2 Heat Set Inserts](https://www.amazon.com/Moicstiy-Threaded-Inserts-M2x4x3-2-Printing/dp/B0DQL44Z2V), required if using the 3D printed case.
 8. [M3 Heat Set Inserts](https://www.amazon.com/Moicstiy-Threaded-Inserts-M2x4x3-2-Printing/dp/B0DQL5YWKQ), required if using the 3D printed case.
 9. [M2x4 Screws](https://www.amazon.com/MroMax-Machine-Cabinet-Stainless-Phillips/dp/B07YCC84L3), required if using the 3D printed case. Any length between 3-5mm should work.
-10. [M3x6 Screws](https://www.amazon.com/MroMax-Machine-Cabinet-Stainless-Phillips/dp/B07YCD2NPV), required if using the 3D printed case. Any lenghth between 5-8mm should work.
+10. [M3x6 Screws](https://www.amazon.com/MroMax-Machine-Cabinet-Stainless-Phillips/dp/B07YCD2NPV), required if using the 3D printed case. Any length between 5-8mm should work.
 11. [Jumper Wires F/F](https://www.amazon.com/California-JOS-Breadboard-Optional-Multicolored/dp/B0BRTKTV64), required to hook up the TVOC sensor, and can be soldered to the RGB LED for an easier hookup.
 
 ## Assembly
