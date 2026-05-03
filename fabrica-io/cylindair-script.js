@@ -8,9 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Attach button handlers
 
 	/// Delete saved data
-	document.getElementById("delete").onclick = function() {
+	document.getElementById("delete").onclick = async function() {
 		if (confirm("Delete data?")) {
-			POSTRequest("/delete", "Data deleted!", { path: "/data/Data.csv" });
+			try {
+				await POSTRequest("/delete", "Data deleted!", { path: "/data/Data.csv" });
+			} catch (e) {
+				document.getElementById("message").html = "Could not delete file: " + e;
+				console.error(e);
+			}
 		}
 	};
 });
