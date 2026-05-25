@@ -147,12 +147,12 @@ During normal operation the LED indicator will light up with a color according t
 
 | Color   |                                                                      |  Air Quality                   |
 | ------- | -------------------------------------------------------------------- | -------------------------------|
-| Blue    | $${\color{Cerulean}\Huge&#9632;}$$  | Excellent                      |
-| Green   | $${\color{Green}\Huge&#9632;}$$     | Good                           |
-| Yellow  | $${\color{Goldenrod}\Huge&#9632;}$$ | Unhealthy for sensitive groups |
-| Orange  | $${\color{Orange}\Huge&#9632;}$$    | Unhealthy                      |
-| Red     | $${\color{Red}\Huge&#9632;}$$       | Very unhealthy                 |
-| Magenta | $${\color{Magenta}\Huge&#9632;}$$   | Hazardous                      |
+| Blue    | $${\color{Cerulean}\Huge&#9632;}$$                                   | Excellent                      |
+| Green   | $${\color{Green}\Huge&#9632;}$$                                      | Good                           |
+| Yellow  | $${\color{Goldenrod}\Huge&#9632;}$$                                  | Unhealthy for sensitive groups |
+| Orange  | $${\color{Orange}\Huge&#9632;}$$                                     | Unhealthy                      |
+| Red     | $${\color{Red}\Huge&#9632;}$$                                        | Very unhealthy                 |
+| Magenta | $${\color{Magenta}\Huge&#9632;}$$                                    | Hazardous                      |
 
 ### Web Interface
 After setting up your Cylindair, it's generally not necessary to access the web interface unless you want to change settings or access more detailed data. The web interface should be accessible at the address `http://airsensor.local`, but if not, you can connect the Cylindair to your computer again and use the [serial monitor](https://github.com/FabricaIO/FabricaIO-App/wiki/App-Usage#flash-firmware-menu) in the Fabrica-IO app to see the IP address.
@@ -166,6 +166,8 @@ While the Cyindair will work as a useful and informative tool as is, it can be e
 ### No WiFi
 If you don't want to have your Cylindair connected to WIFi after settings it up, go into the [web interface](#web-interface) and under the "Hub Configuration" menu, uncheck the [WiFiClient](https://github.com/FabricaIO/FabricaIO-esp32hub/wiki/Hub-Configuration#wificlient) option, save, and then reboot the device from the home menu. Now the device will work by broadcasting it's own WiFi network and won't need connect to another one.
 
+If you're recording data without an internet connection, be sure to either set the time on the web interface, or use something like an real [time clock module](https://github.com/FabricaIO/actor-DFDS1307RTC) to make sure the datapoints are recorded with the correct timestamps.
+
 ### Local Data and Graphs
 You can record air quality data to the device by adding the [LocalDataLogger](https://github.com/FabricaIO/actor-LocalDataLogger) to the project. After data is collected, you can download it from the "Storage Manager" section in the [web interface](#web-interface) for processing. For example, charts like this can be produced:
 
@@ -175,7 +177,7 @@ You can also add the [Data-Visualizer](https://github.com/FabricaIO/Data-Visuali
 
 ![Data Visualizer](media/Graphs.png "Data Visualizer")
 
-In the default configuration, if a data point is recorded every minute, the device can hold approximately a week's worth of data at a time.
+In the default configuration, if a data point is recorded every minute it can hold approximately a week's worth of data at a time.
 
 There's also an example web interface in the [fabrica-io folder](fabrica-io/) of this repository for use with the data visualizer. This interface is simplified to allow for retrieving and resetting the data collected on the device. To use, go to the "Storage Manager" in the web interface. Download `index.html` and rename it to `index2.html`, then upload it to "WWW". Next, upload the new [index.html](fabrica-io/index.html) and [cylindair-script.js](fabrica-io/cylindair-script.js) files to "WWW". Return to the home menu and refresh the page if needed.
 
